@@ -1,0 +1,64 @@
+[
+    {"_id":1,
+        "name": "Karin Stevens",
+        "father": "Karin Stevens",
+        "roll": 5,
+        "course": "ICT",
+        "phone": "(966) 503-3713",
+        "address": " Wattsville, Utah"
+    },
+    {"_id":2,
+        "name": "Becky Blankenship",
+        "father": "Becky Blankenship",
+        "roll": 12,
+        "course": "Agriculture",
+        "phone": "(848) 518-2793",
+        "address": " Cotopaxi, Arkansas"
+    },
+    {
+        "_id":3,
+        "name": "Harriett Gates",
+        "father": "Harriett Gates",
+        "roll": 7,
+        "course": "Fisher",
+        "phone": "(943) 477-3979",
+        "address": " Torboy, New York"
+    },
+    {
+        "_id":4,
+        "name": "Hoover Fitzpatrick",
+        "father": "Hoover Fitzpatrick",
+        "roll": 8,
+        "course": "ICT",
+        "phone": "(837) 492-3240",
+        "address": " Ahwahnee, Kansas"
+    },
+    {
+        "_id":5,
+        "name": "Letitia Castillo",
+        "father": "Letitia Castillo",
+        "roll": 1,
+        "course": "ICT",
+        "phone": "(867) 549-2151",
+        "address": " Aguila, South Dakota"
+    },
+    {
+        
+        "_id":6,
+        "name": "Gillespie Andrews",
+        "father": "Gillespie Andrews",
+        "roll": 10,
+        "course": "ICT",
+        "phone": "(845) 501-2122",
+        "address": " Cumminsville, Montana"
+    },
+    {
+        "_id":7,
+        "name": "Darlene Boyd",
+        "father": "Darlene Boyd",
+        "roll": 9,
+        "course": "ICT",
+        "phone": "(860) 529-3684",
+        "address": " Sterling, Virgin Islands"
+    }
+]
