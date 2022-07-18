@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background: #ECF0F3;
+}
+
+.my-modal{
+    background: #ECF0F3;
+  box-shadow:  5px 5px 10px #c5c5c5,
+               -5px -5px 10px #fbfbfb;
+              
+  }
+
+  .my-child-path{
+    background: linear-gradient(rgb(15, 91, 255),cyan);
+    content:"";
+    top: -20px;
+    right: -14px;
+    position: absolute;
+    clip-path: circle(50% at 50% 50%);
+    width:100px;
+    height: 100px;
+    transform: rotate(45deg);
+  }
+
+  .my-input-2{
+    @apply w-full py-3 px-2 rounded-lg focus:outline-cyan-500 border border-gray-300
+  
+  }
+
+  .my-btn{
+    @apply w-full py-3 px-2 rounded-lg  text-white  text-lg bg-gradient-to-t font-bold  from-cyan-500 to-blue-500  hover:from-blue-500 hover:to-cyan-500 duration-300 cursor-pointer 
+  }
