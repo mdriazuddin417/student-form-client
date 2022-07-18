@@ -2,15 +2,18 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-const SingleStudent = ({ index, student }) => {
+const SingleStudent = ({ index, student, refetch }) => {
   const { name, course, father, address, roll, phone, _id } = student;
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/student/${id}`).then((res) => {
-      if (res.data) {
-        toast.success("Delete success ..");
-      }
-    });
+    await axios
+      .delete(`https://tpl-student.herokuapp.com/student/${id}`)
+      .then((res) => {
+        if (res.data) {
+          refetch();
+          toast.success("Delete success ..");
+        }
+      });
   };
   return (
     <tr className=" lg:text-[18px] md:text-[12px] sm:text-[12px] text-[8px] ">

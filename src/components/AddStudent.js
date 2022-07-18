@@ -13,14 +13,14 @@ const AddStudent = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-
-    await axios.post(`http://localhost:5000/student`, ...data).then((res) => {
-      if (res.data) {
-        reset();
-        toast.success("Student add success ..");
-      }
-    });
+    await axios
+      .post(`https://tpl-student.herokuapp.com/student`, { ...data })
+      .then((res) => {
+        if (res.data) {
+          reset();
+          toast.success("Student add success ..");
+        }
+      });
   };
 
   return (
@@ -113,13 +113,29 @@ const AddStudent = () => {
                 placeholder="Address"
                 className="my-input-2 "
                 {...register("address", {
-                  required: { value: true, message: "Password is Required" },
+                  required: { value: true, message: "Address is Required" },
                 })}
               />
 
               {errors.address?.type === "required" && (
                 <span className="text-red-500 text-sm mt-2 ml-2">
                   {errors?.address?.message}
+                </span>
+              )}
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Phone"
+                className="my-input-2 "
+                {...register("phone", {
+                  required: { value: true, message: "Number is Required" },
+                })}
+              />
+
+              {errors.phone?.type === "required" && (
+                <span className="text-red-500 text-sm mt-2 ml-2">
+                  {errors?.phone?.message}
                 </span>
               )}
             </div>

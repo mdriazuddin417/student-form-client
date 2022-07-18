@@ -33,3 +33,19 @@ body{
   .my-btn{
     @apply w-full py-3 px-2 rounded-lg  text-white  text-lg bg-gradient-to-t font-bold  from-cyan-500 to-blue-500  hover:from-blue-500 hover:to-cyan-500 duration-300 cursor-pointer 
   }
+
+.pagination{ 
+    @apply  flex justify-center items-center gap-5 
+}
+.pg-item .pg-link{
+    @apply px-3 py-2 border rounded shadow
+}
+
+.active{
+    @apply  text-gray-800  font-bold  py-2  bg-blue-200 rounded border-none
+}
+
+
+.active>span:nth-child(1){
+    @apply text-green-600 font-bold
+}

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Update = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const [current, setCurrent] = useState({});
   const {
     reset,
     register,
@@ -13,19 +15,31 @@ const Update = () => {
     handleSubmit,
   } = useForm();
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  useEffect(() => {
+    fetch(`https://tpl-student.herokuapp.com/student/${id}`)
+      .then((res) => res.json())
+      .then((data) => setCurrent(data));
+  }, [id]);
 
   const onSubmit = async (data) => {
-    console.log(data);
+    const student = {
+      name: current.name,
+      father: data.father || current.father,
+      address: data.address || current.address,
+      phone: data.phone || current.phone,
+      course: data.course || current.course,
+      roll: data.roll || current.roll,
+    };
 
-    await axios.update(`http://localhost:5000/student/${id}`).then((res) => {
-      if (res.data) {
-        reset();
-        toast.success("Update successfully");
-        navigate("/");
-      }
-    });
+    await axios
+      .put(`https://tpl-student.herokuapp.com/student/${id}`, { ...student })
+      .then((res) => {
+        if (res.data) {
+          reset();
+          toast.success("Update successfully");
+          navigate("/");
+        }
+      });
   };
 
   return (
@@ -44,35 +58,19 @@ const Update = () => {
             <div>
               <input
                 type="text"
+                value={current?.name}
                 placeholder="Name"
                 className="my-input-2"
-                {...register("name", {
-                  required: { value: true, message: "Name is Required" },
-                })}
+                {...register("name", {})}
               />
-              {errors.email?.type === "required" && (
-                <span className="text-red-500 text-sm mt-2 ml-2">
-                  {errors?.email?.message}
-                </span>
-              )}
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Father's name"
                 className="my-input-2"
-                {...register("father", {
-                  required: {
-                    value: true,
-                    message: "Father's name is Required",
-                  },
-                })}
+                {...register("father", {})}
               />
-              {errors.father?.type === "required" && (
-                <span className="text-red-500 text-sm mt-2 ml-2">
-                  {errors?.father?.message}
-                </span>
-              )}
             </div>
             <div className="flex justify-between items-center gap-5">
               <div>
@@ -80,36 +78,16 @@ const Update = () => {
                   type="text"
                   placeholder="Course name"
                   className="my-input-2"
-                  {...register("course", {
-                    required: {
-                      value: true,
-                      message: "Course name is Required",
-                    },
-                  })}
+                  {...register("course", {})}
                 />
-                {errors.course?.type === "required" && (
-                  <span className="text-red-500 text-sm mt-2 ml-2">
-                    {errors?.course?.message}
-                  </span>
-                )}
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Roll No."
                   className="my-input-2"
-                  {...register("roll", {
-                    required: {
-                      value: true,
-                      message: "Roll number is Required",
-                    },
-                  })}
+                  {...register("roll", {})}
                 />
-                {errors.roll?.type === "required" && (
-                  <span className="text-red-500 text-sm mt-2 ml-2">
-                    {errors?.roll?.message}
-                  </span>
-                )}
               </div>
             </div>
             <div>
@@ -117,16 +95,16 @@ const Update = () => {
                 type="text"
                 placeholder="Address"
                 className="my-input-2 "
-                {...register("address", {
-                  required: { value: true, message: "Address is Required" },
-                })}
+                {...register("address", {})}
               />
-
-              {errors.address?.type === "required" && (
-                <span className="text-red-500 text-sm mt-2 ml-2">
-                  {errors?.address?.message}
-                </span>
-              )}
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="Phone"
+                className="my-input-2 "
+                {...register("phone", {})}
+              />
             </div>
 
             <div>

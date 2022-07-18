@@ -1,5 +1,5 @@
 [
-    {"_id":1,
+    {
         "name": "Karin Stevens",
         "father": "Karin Stevens",
         "roll": 5,
@@ -7,7 +7,7 @@
         "phone": "(966) 503-3713",
         "address": " Wattsville, Utah"
     },
-    {"_id":2,
+    {
         "name": "Becky Blankenship",
         "father": "Becky Blankenship",
         "roll": 12,
@@ -16,7 +16,7 @@
         "address": " Cotopaxi, Arkansas"
     },
     {
-        "_id":3,
+        
         "name": "Harriett Gates",
         "father": "Harriett Gates",
         "roll": 7,
@@ -25,7 +25,7 @@
         "address": " Torboy, New York"
     },
     {
-        "_id":4,
+        
         "name": "Hoover Fitzpatrick",
         "father": "Hoover Fitzpatrick",
         "roll": 8,
@@ -34,7 +34,7 @@
         "address": " Ahwahnee, Kansas"
     },
     {
-        "_id":5,
+        
         "name": "Letitia Castillo",
         "father": "Letitia Castillo",
         "roll": 1,
@@ -44,7 +44,7 @@
     },
     {
         
-        "_id":6,
+        
         "name": "Gillespie Andrews",
         "father": "Gillespie Andrews",
         "roll": 10,
@@ -53,7 +53,7 @@
         "address": " Cumminsville, Montana"
     },
     {
-        "_id":7,
+        
         "name": "Darlene Boyd",
         "father": "Darlene Boyd",
         "roll": 9,
